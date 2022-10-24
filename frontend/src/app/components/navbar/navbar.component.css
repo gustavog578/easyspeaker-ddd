@@ -1,0 +1,8 @@
+.navbar-brand{
+    font-size: 15px;
+}
+
+nav {
+    margin-top: 10px;
+    justify-content: space-between;
+}

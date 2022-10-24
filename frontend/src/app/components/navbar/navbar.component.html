@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg" *ngIf="!loggedIn">
+  <a class="navbar-brand">  EasySpeaker</a>
+  <div><a class="navbar-brand" routerLink="sign-up-teacher">Conviertete en Profesor!</a></div>
+  <div><select name="language" id="language">
+    <option value="0">{{ titleLanguage }}</option>
+    <option value="1">Español</option>
+    <option value="2">English</option>
+    <option value="3">Francais</option>
+  </select></div>
+  <div>
+        <a class="navbar-brand" *ngIf="loggedIn">{{ user }}</a>
+        <a i18n="app@@linkLogin" class="navbar-brand" routerLink="login" *ngIf="!loggedIn">Ingresar</a>
+        <a i18n="app@@linkLogin" class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Salir</a>
+        <a i18n="app@@linkRegister" class="navbar-brand" routerLink="signup" *ngIf="!loggedIn">Registracion</a>
+    
+  </div>
+</nav>

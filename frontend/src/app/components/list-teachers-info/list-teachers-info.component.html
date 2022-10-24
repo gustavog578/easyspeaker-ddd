@@ -1,0 +1,47 @@
+<div class="container">
+
+  <mat-form-field>
+    <mat-label>Select Language</mat-label>
+    <mat-select placeholder="Languages" [(ngModel)]="selectedLanguage" name="language" (selectionChange)="searchByLanguages($event.value)">
+      <mat-option *ngFor="let language of languages" [value]="language.short_name">
+        {{language.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!--<mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Option 1</mat-radio-button>
+    <mat-radio-button value="2">Option 2</mat-radio-button>
+  </mat-radio-group>-->
+  <button mat-button (click)= "reset()">Clear</button>
+  <h5><span [(matBadge)]="teachersCount" matBadgeOverlap="false">Teachers available in your area</span></h5>
+  
+  <ul>
+    <li *ngFor="let teacher of teachers">
+      <mat-card class="example-card">
+        <div mat-card-avatar class="example-header-image">
+          <img mat-card-image>
+        </div>
+        <mat-card-header>
+          <mat-card-title> {{teacher.username}}, {{teacher.lastname}}</mat-card-title>
+          <mat-card-subtitle>Profesor de la comunidad</mat-card-subtitle>
+
+        </mat-card-header>
+       <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+        <mat-card-content>
+          <h5>Native Language</h5><span>{{ teacher.native_language }}</span>
+          <p>
+            Hi, I am Jaime!! If you are interesting on take class with me, then let me know!!!
+          </p>
+        </mat-card-content>
+        <mat-card-content>
+          <b>Price</b>: {{ teacher.currency }} {{ teacher.price }} / h
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+          <app-reviews [teacher] = teacher.reviews ></app-reviews>
+        </mat-card-actions>
+      </mat-card>
+    </li>
+  </ul>
+</div>

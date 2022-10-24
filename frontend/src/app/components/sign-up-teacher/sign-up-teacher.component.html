@@ -1,0 +1,47 @@
+
+<div class="container-form">
+
+    <form class="example-form" #signupForm=ngForm (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput placeholder="Nombre"  name="name" id="name" [(ngModel)] = "form.name">
+      </mat-form-field>
+      <br>
+      <ng-template matStepLabel>Apellido</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Apellido"  name="lastname" id="lastname" [(ngModel)] = "form.lastname">
+      </mat-form-field>
+      <br>
+      <ng-template matStepLabel>Email</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Email"  name="email" id="email" [(ngModel)] = "form.email">
+      </mat-form-field>
+      <br>
+      <ng-template matStepLabel>Contraseña</ng-template>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Contraseña"  name="password" id="password" [(ngModel)]="form.password">
+      </mat-form-field>
+      <br>
+      <ng-template matStepLabel>Confirmar contraseña</ng-template>
+      <mat-form-field>
+        <input matInput type="password" placeholder="confirmar contraseña"  name="password2" id="password2" [(ngModel)]="form.password_confirmation">
+      </mat-form-field>
+      <br>
+      <mat-radio-group [(ngModel)] = "form.genre" [ngModelOptions]="{standalone: true}">
+        <mat-radio-button matInput value="M" name="genre" id="genreM"  ngDefaultControl>Hombre</mat-radio-button>
+        <mat-radio-button matInput value="F" name="genre" id="genreF"  ngDefaultControl>Mujer</mat-radio-button>
+      </mat-radio-group>
+      <br>
+      <br>
+      <mat-form-field>
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" [(ngModel)]="form.date_birth" [ngModelOptions]="{standalone: true}" placeholder="Elije una fecha">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      
+      <button mat-raised-button color="primary" type="submit">Registrarte</button>
+      
+      
+    </form>    
+
+</div>

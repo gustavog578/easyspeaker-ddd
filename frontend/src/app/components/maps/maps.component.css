@@ -1,0 +1,10 @@
+agm-map {
+  margin-top: 20px;
+  height: 500px;
+  width: 100%;
+}
+.container-map {
+  margin-top: 10px;
+  width: 80%;
+  float: right;
+}

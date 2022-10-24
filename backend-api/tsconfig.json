@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "target": "es6",
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "baseUrl": "./src",
+        "importHelpers": true,
+        "allowSyntheticDefaultImports": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": ["es5", "es6", "dom"],
+        "typeRoots": [
+            "./src/Contexts/users/domain/types",
+            "./src/Contexts/teacher/domain/types",
+            "./node_modules/@types"
+        ],
+        "types": [
+            "node",
+            "reflect-metadata"
+        ],
+        "paths": {
+            "@users/*": ["Contexts/users/*"],
+            "@teacher/*": ["Contexts/teacher/*"],
+            "@languages/*": ["Contexts/languages/*"],
+            "@shared/*": ["Contexts/shared/*"],
+            "@config/*": ["config/*"],
+            "*": [
+                "node_modules/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
